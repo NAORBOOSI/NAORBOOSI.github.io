@@ -1,0 +1,88 @@
+<div style="padding:50px;">
+  <h1 style="color: rgb(255, 166, 0)">Kindergarten</h1>
+  <h3>{{title}}</h3>
+  <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon style="color: rgb(255, 30, 0)">view_headline</mat-icon>Menu</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item> 
+        <mat-icon>home</mat-icon>
+        <a routerLink="home-page" class=mat-raised-button color="primary" role="button" routerLinkActive="active">Home page</a>
+                      </button>
+                      <button mat-menu-item> 
+
+                      <mat-icon>person_add</mat-icon>
+        <a routerLink="profile" class=mat-raised-button color="primary" role="button" routerLinkActive="active">Profile</a>
+                      </button>
+       
+             <button mat-menu-item [matMenuTriggerFor]="secondLevel">
+                <mat-icon>account_box</mat-icon>
+         <a  routerLink="parents" class=mat-raised-button color="primary"  role="button" routerLinkActive="active">Parents</a>
+               </button>
+               <button mat-menu-item [matMenuTriggerFor]="secondLevel2">
+                  <mat-icon>child_care</mat-icon>
+           <a  routerLink="children" class=mat-raised-button color="primary"  role="button" routerLinkActive="active">Children</a>
+                 </button>
+                 <button mat-menu-item [matMenuTriggerFor]="secondLevel3">
+                    <mat-icon>account_box</mat-icon>
+             <a  routerLink="kinder" class=mat-raised-button color="primary"  role="button" routerLinkActive="active">Kindergarten</a>
+                   </button>
+     
+    
+        
+              <button mat-menu-item> 
+                  <mat-icon>search</mat-icon>
+
+                  <a routerLink="findByFirstName" class=mat-raised-button color="primary" role="button" routerLinkActive="active">Search Parent</a>
+                                </button>
+                <router-outlet></router-outlet>
+<app-home-page></app-home-page>    
+          </mat-menu>
+
+  <router-outlet></router-outlet>
+</div>
+  
+
+<mat-menu #secondLevel="matMenu">
+    <button mat-menu-item>
+            <mat-icon>account_box</mat-icon>
+     <a  routerLink="list-parents" class=mat-raised-button color="primary"  role="button" routerLinkActive="active">List-parents</a>
+           </button>
+           <button mat-menu-item> 
+              <mat-icon>person_add</mat-icon>
+
+              <a routerLink="addParents" class=mat-raised-button color="primary" role="button" routerLinkActive="active">Add parents</a>
+                         </button>
+                         <mat-menu #secondLevel2="matMenu">
+                            <button mat-menu-item>
+                                    <mat-icon>child_care</mat-icon>
+                             <a  routerLink="list-children" class=mat-raised-button color="primary"  role="button" routerLinkActive="active"> List-children</a>
+                                   </button>
+                                   <button mat-menu-item> 
+                                      <mat-icon>person_add</mat-icon>
+                        
+                                      <a routerLink="addChild" class=mat-raised-button color="primary" role="button" routerLinkActive="active">Add child</a>
+                                                 </button>
+                        
+                                                 <mat-menu #secondLevel3="matMenu">
+                                                    <button mat-menu-item>
+                                                        <mat-icon>house</mat-icon>
+                                                 <a  routerLink="kindergarten" class=mat-raised-button color="primary"  role="button" routerLinkActive="active">Create kindergarten</a>
+                                                       </button>
+                                            
+                                                       <button mat-menu-item >
+                                                          <mat-icon>account_box</mat-icon>
+                                                   <a  routerLink="list-kinder" class=mat-raised-button color="primary"  role="button" routerLinkActive="active">List-kinder</a>
+                                                         </button>
+                                                
+                                                  </mat-menu>
+                          </mat-menu>
+                         
+</mat-menu>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" >
+    <div fxFlex="20%" *ngFor="let i of [1]" >
+      <mat-card>
+        <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+      </mat-card>
+    </div>
+  </div>
+  

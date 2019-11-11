@@ -1,0 +1,7 @@
+<h3>Customers</h3>
+<div *ngFor ="let customer of customers | async" style="width: 300px;">
+</div>
+
+<div>
+    <button type="button" class="button btn-dager" (click)='deleteCustomers()'>Delete All</button>
+</div>

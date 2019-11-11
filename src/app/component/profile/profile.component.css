@@ -1,0 +1,16 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('C:\Users\NAOR\kinder-angular\images\Naor.png');
+    background-size: cover;
+  }
+  p {
+    font-family: "Times New Roman", Times, serif;
+   font-size: 150%; 
+  }
+  p.test1{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 130%; 
+  }

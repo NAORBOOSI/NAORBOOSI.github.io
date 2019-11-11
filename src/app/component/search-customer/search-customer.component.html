@@ -1,0 +1,45 @@
+<h3>Find by firstName</h3>
+<input matInput placeholder="שם ההורה " [(ngModel)]="parents.firstName" > 
+
+<button mat-icon-button   (click)="searchParent()">
+    <mat-icon>search</mat-icon>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let parents"> {{parents.firstName}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> LastName </th>
+        <td mat-cell *matCellDef="let parents"> {{parents.lastName}} </td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let parents"> {{parents.parentId}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+     
+    <div>
+      <button type="button" class="button btn-danger" (click)='deleteCustomers()'>Delete All</button>
+    </div>
+  </button>
+ 
+

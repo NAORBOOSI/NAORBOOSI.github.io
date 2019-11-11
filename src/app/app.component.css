@@ -1,0 +1,21 @@
+p {
+    font-family: Lato;
+  }
+container{
+    height:20% ;
+}
+.container {
+    width: 340px;
+    height: 340px;
+    display: block;
+  }
+  
+  .containerr .mat-calendar-scroll-mask {
+    width: 340px !important;
+  }
+  
+  .container .mat-virtual-repeat-scroller {
+    width: 340px !important;
+    height: 308px;
+  }
+  

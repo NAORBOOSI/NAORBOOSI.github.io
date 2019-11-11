@@ -1,0 +1,31 @@
+<h3>Create Parents</h3>
+
+<input matInput placeholder="שם " [(ngModel)]="parent.firstName" > 
+<input matInput placeholder="שם משפחה" [(ngModel)]="parent.lastName" > 
+<br>
+<br>
+<input matInput placeholder="ת.ז " [(ngModel)]="parent.parentId" > 
+<br>
+<input matInput placeholder="טלפון " [(ngModel)]="parent.phoneNumber" > 
+<br>
+<input matInput placeholder="Email " [(ngModel)]="parent.emailAdrress" >
+
+
+<br>
+  <br>
+  <label for="start">Start date:</label>
+
+<input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2020-12-31">
+<button mat-icon-button   (click)="createParent()">
+        <mat-icon>create</mat-icon>
+      </button>
+
+
+  <!-- <input matInput placeholder="RESULT" [(ngModel)]="parentsResponse" >{{parentsResponse}}  -->
+
+<div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newCustomer()">Add</button>
+</div>
